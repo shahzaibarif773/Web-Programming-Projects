@@ -29,6 +29,14 @@ body{
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+/* Page title */
+.page-title{
+    margin-bottom: 10px;
+    color: #1a202c;
+    font-size: 2.4em;
+    font-weight: 700;
+}
+
 /* Headings */
 h2{
     margin-bottom: 25px;
@@ -100,6 +108,50 @@ button:hover{
     background: linear-gradient(90deg, #764ba2, #667eea);
 }
 
+/* Edit form layout */
+.edit-form{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-width: 500px;
+}
+
+.edit-form label{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.95em;
+    color: #4a5568;
+}
+
+.edit-form label span{
+    font-weight: 600;
+}
+
+.edit-actions{
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.btn-secondary{
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid #cbd5e0;
+    background: #edf2f7;
+    color: #4a5568;
+    font-weight: 500;
+    font-size: 0.9em;
+    transition: all 0.2s ease;
+}
+
+.btn-secondary:hover{
+    background: #e2e8f0;
+    border-color: #a0aec0;
+}
+
 /* Table */
 table{
     width: 100%;
@@ -138,38 +190,97 @@ table tr {
     transition: all 0.3s ease;
 }
 
-table tr:hover td{
+table tr:hover td {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* User list wrapper */
+.user-list {
+    overflow-x: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* User rows - alternating background */
+.user-row.row-even td {
     background: #f8fafc;
-    transform: scale(1.01);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Action links */
-a{
+.user-row:hover td {
+    background: #eef2ff !important;
+}
+
+/* Column styling */
+.col-id {
+    width: 60px;
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.col-name {
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.col-email {
+    color: #4a5568;
+}
+
+.col-password {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.85em;
+    color: #718096;
+}
+
+.col-actions {
+    white-space: nowrap;
+}
+
+/* Edit / Delete buttons */
+.btn {
     text-decoration: none;
-    padding: 8px 16px;
+    padding: 8px 18px;
     border-radius: 8px;
-    margin: 0 5px;
+    margin: 0 4px;
     display: inline-block;
-    font-weight: 500;
-    font-size: 0.9em;
-    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 0.85em;
+    letter-spacing: 0.3px;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
 }
 
-a[href*="update"]{
-    background: linear-gradient(90deg, #10b981, #059669);
+.btn-edit {
+    background: linear-gradient(135deg, #10b981, #059669);
     color: white;
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.35);
 }
 
-a[href*="delete"]{
-    background: linear-gradient(90deg, #ef4444, #dc2626);
+.btn-edit:hover {
+    background: linear-gradient(135deg, #059669, #047857);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.5);
+}
+
+.btn-delete {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
     color: white;
-    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.35);
 }
 
-a:hover{
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-    opacity: 1;
+.btn-delete:hover {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.5);
+}
+
+/* Empty state row */
+.empty-state {
+    text-align: center;
+    font-style: italic;
+    color: #718096;
+    background: #edf2f7;
+    padding: 24px !important;
+    font-size: 1.05em;
 }

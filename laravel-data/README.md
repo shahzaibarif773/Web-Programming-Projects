@@ -2,6 +2,10 @@
 
 Laravel 12 + MySQL CRUD project that replicates the SQL_CRUD lab functionality from `Laravel_data-main`.
 
+## Project Toturial Link
+
+- https://drive.google.com/file/d/17dJmjYnlKBsSbTq-MqQEAtOjereSyCtG/view?usp=sharing
+
 ## Stack
 
 - PHP 8.2+
